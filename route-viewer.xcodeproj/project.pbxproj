@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F546D43B21C249EA00EC6E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546D43A21C249EA00EC6E98 /* AppDelegate.swift */; };
-		F546D43D21C249EA00EC6E98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546D43C21C249EA00EC6E98 /* ViewController.swift */; };
+		F546D43D21C249EA00EC6E98 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546D43C21C249EA00EC6E98 /* HomeVC.swift */; };
 		F546D44021C249EA00EC6E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F546D43E21C249EA00EC6E98 /* Main.storyboard */; };
 		F546D44221C249EC00EC6E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F546D44121C249EC00EC6E98 /* Assets.xcassets */; };
 		F546D44521C249EC00EC6E98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F546D44321C249EC00EC6E98 /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		F546D43721C249EA00EC6E98 /* route-viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "route-viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F546D43A21C249EA00EC6E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F546D43C21C249EA00EC6E98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F546D43C21C249EA00EC6E98 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		F546D43F21C249EA00EC6E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F546D44121C249EC00EC6E98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F546D44421C249EC00EC6E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,12 +77,10 @@
 		F546D43921C249EA00EC6E98 /* route-viewer */ = {
 			isa = PBXGroup;
 			children = (
-				F546D43A21C249EA00EC6E98 /* AppDelegate.swift */,
-				F546D43C21C249EA00EC6E98 /* ViewController.swift */,
-				F546D43E21C249EA00EC6E98 /* Main.storyboard */,
+				F546D45A21C24BB900EC6E98 /* Controller */,
+				F546D45C21C24BEB00EC6E98 /* View */,
+				F546D45B21C24BCF00EC6E98 /* Supporting Files */,
 				F546D44121C249EC00EC6E98 /* Assets.xcassets */,
-				F546D44321C249EC00EC6E98 /* LaunchScreen.storyboard */,
-				F546D44621C249EC00EC6E98 /* Info.plist */,
 			);
 			path = "route-viewer";
 			sourceTree = "<group>";
@@ -94,6 +92,32 @@
 				F546D45121C249ED00EC6E98 /* Info.plist */,
 			);
 			path = "route-viewerTests";
+			sourceTree = "<group>";
+		};
+		F546D45A21C24BB900EC6E98 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F546D43C21C249EA00EC6E98 /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F546D45B21C24BCF00EC6E98 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F546D43A21C249EA00EC6E98 /* AppDelegate.swift */,
+				F546D44621C249EC00EC6E98 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F546D45C21C24BEB00EC6E98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F546D43E21C249EA00EC6E98 /* Main.storyboard */,
+				F546D44321C249EC00EC6E98 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F546D43D21C249EA00EC6E98 /* ViewController.swift in Sources */,
+				F546D43D21C249EA00EC6E98 /* HomeVC.swift in Sources */,
 				F546D43B21C249EA00EC6E98 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +386,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4YU39WUVXB;
-				INFOPLIST_FILE = "route-viewer/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/route-viewer/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,7 +405,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4YU39WUVXB;
-				INFOPLIST_FILE = "route-viewer/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/route-viewer/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
