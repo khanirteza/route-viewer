@@ -6,7 +6,7 @@ This is a route viewer app that shows user's current location on the map. Upon l
 </p>
 
 
-The project uses **Mapbox** SDK for showing the map and route. Also, for dependency management **Cocoapods** have been used.
+The project uses **Mapbox** SDK for showing the map and route. Also, for dependency management **Cocoapods** have been used. To build the project you need **Xcode 10** in your machine. Also, without the location permission, some of the features of the app will not work.
 
 After cloning the repository, go to the project directory and run the following command from command line.
 ```
