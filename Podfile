@@ -7,6 +7,7 @@ target 'route-viewer' do
 
   # Pods for route-viewer
   pod 'Mapbox-iOS-SDK', '~> 4.6'
+  pod 'MapboxNavigation', '~> 0.26.0'
   pod 'SwiftyJSON', '~> 4.0'
 
   target 'route-viewerTests' do
