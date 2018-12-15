@@ -90,7 +90,6 @@ class HomeVC: UIViewController {
         headerView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         headerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
-        EtaTextView.text = "Travel Time: "
         headerView.addSubview(EtaTextView)
         EtaTextView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -134,6 +133,7 @@ class HomeVC: UIViewController {
         default:
             mapView.styleURL = MGLStyle.streetsStyleURL
         }
+        // Reset the map to initial view and remove previously added items
         self.clearView()
     }
     
@@ -146,6 +146,7 @@ class HomeVC: UIViewController {
     }
     
     func clearView() {
+        // Clear previously added annotations
         if let annotations = mapView.annotations {
             mapView.removeAnnotations(annotations)
         }
@@ -173,6 +174,7 @@ class HomeVC: UIViewController {
     }
     
     func hidePreviousRoute() {
+        // Hide all the lines starting with the id "line" that were added previously
         guard let layers = mapView.style?.layers else { return }
         for layer in layers {
             if layer.identifier.contains("line-") {
@@ -192,6 +194,7 @@ class HomeVC: UIViewController {
             var routeCoordinates = route.coordinates!
             let polyline = MGLPolylineFeature(coordinates: &routeCoordinates, count: route.coordinateCount)
             
+            // Try to reuse the previously added polyline if available or create a new one
             if let source = mapView.style?.source(withIdentifier: "source-\(i)") as? MGLShapeSource {
                 source.shape = polyline
             } else {
@@ -200,7 +203,9 @@ class HomeVC: UIViewController {
             }
             
             if let source = mapView.style?.source(withIdentifier: "source-\(i)") as? MGLShapeSource {
+                // Try to reuse the previously added line if available or else draw a new one
                 if (mapView.style?.layer(withIdentifier: "line-\(i)") as? MGLLineStyleLayer) == nil {
+                    // Mark first route as a selected route
                     if i == 0 {
                         let lineStyle = MGLLineStyleLayer(identifier: "line-\(i)", source: source)
                         lineStyle.lineColor = NSExpression(forConstantValue: UIColor.blue)
@@ -229,6 +234,7 @@ class HomeVC: UIViewController {
         }
         let centerPoint = getCenterPoint(of: route)
         
+        // Get the farthest distance of the route from the center, so that whole route is showed up if route has unusual shape
         let farthestDistance = getFarthestDistance(from: centerPoint, to: route.coordinates!)
         let altitude = (2 * farthestDistance) / tan(Double.pi * (15/180.0))
         let camera = MGLMapCamera(lookingAtCenter: centerPoint, fromEyeCoordinate: centerPoint, eyeAltitude: altitude)
